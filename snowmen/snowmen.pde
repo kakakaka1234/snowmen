@@ -11,7 +11,7 @@ quitButtonSetup();
 }
 
 void draw () {
-  fill(#1635F5);
+  fill(#6CFFF6);
 background(500,600);
 fill(#FCFDFF);
 
@@ -64,7 +64,26 @@ textAlign(CENTER,TOP); //Align X&Y, see Processing.org/refference
 //Values: LEFT| CENTER| RIGHT & TOP| CENTER| BOTTOM| BASELINE
 text(words,width/4,height*0,width/2,height*1/10);
 fill(255);//reset ink back to white
-
+//Using Width and Height Key Varaibles, communciaiton to the display Geometry
+  size(500, 600);
+  
+  pic = loadImage("large_cute-santa2.png"); 
+  pic2 = loadImage("gift.png"); 
+  pic3 = loadImage("gift.png"); 
+  
+  rect(width*0, height*0, width*1/6, height*1/6); 
+  image (pic, width*0, height*0, width*1/6, height*1/6); 
+  
+  rect(width*1/5, height*1/5, width*1/7, width*1/5); 
+  image (pic2, width*1/5, height*1/5, width*1/7, width*1/5); 
+  rect(width*2/3,height*1/5,width*1/7,width*1/5);
+  image(pic3,width*2/3,height*1/5,width*1/7,width*1/5);
+  fill(#14FA47);
+  ellipse(width/2,height/3,width/55,width/55);
+  ellipse(width/2,height*1/3.5,width/55,width/55);
+  ellipse(width/2,height*1/2.5,width/55,width/55);
+  ellipse(width/2,height*1/1.5,width/55,width/55);
+  ellipse(width/2,height*5/6,width/55,width/55);
 }
 
 
