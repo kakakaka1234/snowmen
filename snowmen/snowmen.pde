@@ -6,6 +6,27 @@ void setup(){
 //printArray(fontlist);//for listing all possible fonts to choose, then createFont
 titleFont = createFont("BookmanOldStyle-Bold-48",40);//must also tools
 
+ x = new float[ n];
+  y = new float[ n];
+  size = new float[ n];
+  spin = new float[ n];
+  spinspeed = new float[ n];
+ 
+  flake_shapes = new PShape[ 100 ];
+  for ( int idx = 0; idx < 100; ++idx ) {
+    //    flake_shapes[idx] = 
+    //      loadShape( "snowflake" + (idx+1) + ".svg" );
+    x[idx]= random( 0, width);
+    y[idx] = random( -10, 0);
+    size [ idx] = random( 5, 20);
+  }
+ 
+  frameRate(18);
+
+
+
+  
+
 quitButtonSetup();
   
 }
@@ -84,9 +105,48 @@ fill(255);//reset ink back to white
   ellipse(width/2,height*1/2.5,width/55,width/55);
   ellipse(width/2,height*1/1.5,width/55,width/55);
   ellipse(width/2,height*5/6,width/55,width/55);
+  
+  
+ 
+  updateFlakes();
+  drawFlakes();
+}
+ 
+void updateFlakes() {
+ 
+  for ( int i = 0; i < n; i++ ) {
+    x[ i] += random( -1, 1);
+    y[ i] ++ ; // = random( 0, - 100);
+    // size [ i] = random( 0, 1);
+    spin[ i] = random( 0, 15);
+    spinspeed[ i] = random( 0, 2);
+ 
+    // Just a quick test to draw anything at all. 
+    //    for ( int idx = 0; i < 12; i++) {
+    //      //  shape( flake_shapes[i], 0, 0 );
+    //      rect (x[idx], y[idx], 3, 3);
+    //    }
+  }
+  
+
+  
+  
+  
+  
 }
 
 
 void mouseClicked() { 
   quitButtonMouseClicked();
+}
+
+
+
+void drawFlakes() {
+ 
+  // Just a quick test to draw anything at all. 
+  for ( int i = 0; i < 100; i++) {
+    // shape( flake_shapes[i], 0, 0 );
+    rect (x[i], y[i], 3, 3);
+  }
 }
