@@ -14,8 +14,6 @@ titleFont = createFont("BookmanOldStyle-Bold-48",40);//must also tools
  
   flake_shapes = new PShape[ 100 ];
   for ( int idx = 0; idx < 100; ++idx ) {
-    //    flake_shapes[idx] = 
-    //      loadShape( "snowflake" + (idx+1) + ".svg" );
     x[idx]= random( 0, width);
     y[idx] = random( -10, 0);
     size [ idx] = random( 5, 20);
@@ -120,12 +118,7 @@ void updateFlakes() {
     // size [ i] = random( 0, 1);
     spin[ i] = random( 0, 15);
     spinspeed[ i] = random( 0, 2);
- 
-    // Just a quick test to draw anything at all. 
-    //    for ( int idx = 0; i < 12; i++) {
-    //      //  shape( flake_shapes[i], 0, 0 );
-    //      rect (x[idx], y[idx], 3, 3);
-    //    }
+     }
   }
   
 
@@ -133,7 +126,6 @@ void updateFlakes() {
   
   
   
-}
 
 
 void mouseClicked() { 
@@ -143,10 +135,8 @@ void mouseClicked() {
 
 
 void drawFlakes() {
- 
-  // Just a quick test to draw anything at all. 
+  
   for ( int i = 0; i < 100; i++) {
-    // shape( flake_shapes[i], 0, 0 );
     rect (x[i], y[i], 3, 3);
   }
 }
